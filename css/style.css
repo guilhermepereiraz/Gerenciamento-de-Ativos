@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Mantém sua fonte */
+}
+
+/* Estilo do container principal que segura as duas colunas */
+.container {
+    display: flex;
+    width: 100vw;  /* vw = 100% da LARGURA da tela */
+    height: 100vh; /* vh = 100% da ALTURA da tela */
+}
+
+/* --- AQUI ESTÁ A CORREÇÃO PRINCIPAL --- */
+.login-form {
+    width: 30%;
+    height: 98vh;
+    display: flex;             /* Ativa o modo flexbox */
+    flex-direction: column;    /* Empilha os itens um em cima do outro */
+    align-items: center;       /* Centraliza tudo horizontalmente (no meio) */
+    justify-content: center;   /* Centraliza tudo verticalmente (opcional, mas bom) */
+}
+
+
+.login-form h1 {
+    padding: 0; /* Remove padding antigo para um melhor alinhamento */
+    margin-bottom: 50px; /* Adiciona espaço abaixo do título */
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, 0.712);
+}
+
+
+/* Estiliza o formulário para organizar os inputs e botão */
+.login-form form {
+    display: flex;
+    flex-direction: column; /* Organiza os inputs um embaixo do outro */
+    align-items: center;    /* Garante que eles também fiquem centralizados */
+}
+
+.input_class {
+     padding: 15px;
+     width: 300px; /* Use uma unidade fixa como 'px' ou '%' para melhor controle */
+     margin-bottom: 15px; /* Espaçamento entre os campos */
+     border: 1px solid #ccc;
+     border-radius: 5px;
+}
+
+/* Estilo para o parágrafo "Esqueci minha senha" */
+.login-form p {
+    margin-top: -25px;
+    margin-left: 180px;
+    margin-bottom: 70px;
+    color: #132C0D; 
+    cursor: pointer;
+    border-bottom: 1px solid transparent; 
+    transition: border-bottom-color 0.2s ease-out; 
+
+ 
+}
+.login-form p:hover {
+    border-bottom: 1px solid #132C0D; /* Adiciona um efeito de sublinhado ao passar o mouse */
+ 
+}
+
+.buttonentre {
+    width: 300px; /* Mesma largura dos inputs para um visual consistente */
+    padding: 15px;
+    transition: background-color 0.4s ease, transform 0.4s ease, width 0.4s ease;
+    background-color: #132c0d67;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.buttonentre.ativo {
+    background-color: #4CAF50; /* Cor verde de sucesso */
+    cursor: pointer; /* Muda o cursor para a "mãozinha" */
+
+}
+
+/* 3. A MÁGICA: O efeito de HOVER que só se aplica quando o botão tem a classe .ativo */
+.buttonentre.ativo:hover {
+    background-color: #45a049; /* Um verde um pouco mais escuro no hover */
+    transform: translateY(-4px);
+    width: 290px;
+}
+
+
+.campo-flutuante {
+    position: relative; /* Essencial para o posicionamento do label */
+    margin-bottom: 25px; /* Espaço entre os campos */
+}
+
+/* O estilo para o label que vai flutuar */
+.label-flutuante {
+    position: absolute;
+    pointer-events: none; /* Permite clicar através do label no input */
+    left: 15px;
+    top: 15px; /* Posição inicial, centralizado no campo */
+    transition: all 0.2s ease; /* Animação suave */
+    color: #888;
+    background-color: white; /* Fundo branco para criar o "corte" na borda */
+    padding: 0 5px; /* Espaço nas laterais do texto do label */
+}
+
+/* Remove o placeholder padrão do input */
+.input_class::placeholder {
+    color: transparent;
+}
+
+/* A MÁGICA: Quando o input está focado OU preenchido... */
+.input_class:focus + .label-flutuante,
+.input_class:not(:placeholder-shown) + .label-flutuante {
+    /* ... o label sobe e diminui! */
+    top: -8px; /* Move para cima da borda */
+    font-size: 12px;
+    color: #555;
+}
+
+/* Muda a cor da borda quando o input está focado */
+.input_class:focus {
+    outline: none; /* Remove o contorno padrão do navegador */
+    border-color: #132c0dbe; /* Uma cor que combina com seu botão */
+}
+
+.cadastro-form {
+    width: 75%; /* Coluna verde ocupará os 65% restantes */
+    height: 100%; /* Ocupa 100% da altura do container */
+    background-color: #132C0D; /* A cor verde que você queria */
+    /* As linhas abaixo centralizam o conteúdo da coluna verde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px 10px rgba(192, 192, 192, 0.658);
+
+}
+
+.cadastro-form h1 {
+    padding: 0; /* Remove padding antigo para um melhor alinhamento */
+    margin-top: 100px; /* Espaço acima do título */
+    text-align: center;
+    font-size: 4em;
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+
+.cadastro-form img {
+    width: 500px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10%; /* Espaço abaixo da imagem */
+}
+
+.cadastro-form h3 {
+    color: white;
+    font-weight: 200;
+    margin-top: 15%;
+    font-size: 2em;
+}
+
+.cadastro-form button {
+    padding: 10px;
+    width: 15%;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+}
+
+.cadastro-form button:hover {
+ cursor: pointer;
+}
+
+.cadastro-form button:active {
+   border: 2px solid #132C0D; /* Adiciona uma borda verde quando o botão é clicado */
+}
+
+
+
