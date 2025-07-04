@@ -132,14 +132,15 @@ body {
 }
 
 .cadastro-form {
-    width: 75%; /* Coluna verde ocupará os 65% restantes */
+    width: 70%; /* Coluna verde ocupará os 65% restantes */
     height: 100%; /* Ocupa 100% da altura do container */
     background-color: #132C0D; /* A cor verde que você queria */
     /* As linhas abaixo centralizam o conteúdo da coluna verde */
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-end-start-radius: 25px;
     box-shadow: 2px 2px 3px 10px rgba(192, 192, 192, 0.658);
 
 }
@@ -165,7 +166,7 @@ body {
     color: white;
     font-weight: 200;
     margin-top: 15%;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .cadastro-form button {
@@ -182,6 +183,89 @@ body {
 
 .cadastro-form button:active {
    border: 2px solid #132C0D; /* Adiciona uma borda verde quando o botão é clicado */
+}
+
+/* Para Telas Médias (Tablets) - até 992px de largura */
+@media (max-width: 992px) {
+    .login-form {
+        width: 45%; /* Aumenta um pouco o espaço do formulário */
+    }
+    .cadastro-form {
+        width: 55%; /* Diminui um pouco o espaço da área verde */
+    }
+    .cadastro-form h1 {
+        font-size: 3em; /* Diminui um pouco o título */
+    }
+    .cadastro-form img {
+        width: 350px; /* Diminui a imagem */
+    }
+}
+
+
+/* Para Telas Pequenas (Celulares) - até 768px de largura */
+@media (max-width: 768px) {
+    /* Faz o layout de colunas virar uma pilha vertical */
+    .container {
+        flex-direction: column; 
+    }
+
+    /* As duas seções agora ocupam 100% da largura */
+    .login-form,
+    .cadastro-form {
+        width: 100%;
+        height: auto; /* A altura se ajusta ao conteúdo */
+        min-height: 50vh; /* Garante que ocupem pelo menos metade da tela cada */
+        padding: 40px 20px; /* Adiciona espaçamento interno */
+        box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    }
+
+    /* Remove a sombra da direita no modo celular */
+    .cadastro-form {
+        box-shadow: none;
+    }
+
+    /* Ajusta o título do formulário de login */
+    .login-form h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    /* Faz os inputs e o botão ocuparem uma largura relativa, não fixa */
+    .input_class,
+    .buttonentre {
+        width: 90%;
+        max-width: 350px; /* Limita a largura máxima para não ficar gigante */
+    }
+
+    /* Centraliza o parágrafo "Esqueci minha senha" */
+    .login-form p {
+        margin-left: 0;
+        text-align: center;
+        width: 90%;
+        max-width: 350px;
+        margin-bottom: 40px;
+    }
+
+    /* Ajusta os textos e a imagem da seção verde */
+    .cadastro-form h1 {
+        font-size: 2.5em;
+        margin-top: 20px;
+    }
+
+    .cadastro-form img {
+        width: 200px;
+        margin-top: 10%;
+    }
+
+    .cadastro-form h3 {
+        font-size: 1.5em;
+        margin-top: 15%;
+    }
+
+    .cadastro-form button {
+        width: 60%;
+        max-width: 250px;
+    }
 }
 
 
